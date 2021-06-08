@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     Button btn_exit;
     String[] arrayOfCharNames;
     String[] arrayOfCountryNames;
+    String[] arrayOfFavouriteFood;
+    String[] arrayOfFavouriteGame;
     Resources resources;
 
 
@@ -42,7 +44,13 @@ public class MainActivity extends AppCompatActivity {
         //Array of the character names and shuffle them
         arrayOfCharNames = resources.getStringArray(R.array.names);
         Collections.shuffle(Arrays.asList(arrayOfCharNames));
+        //Array of country names
         arrayOfCountryNames = resources.getStringArray(R.array.countries);
+        //Array of favourite food
+        arrayOfFavouriteFood = resources.getStringArray(R.array.favouriteFood);
+        //Array of facourite game
+        arrayOfFavouriteGame = resources.getStringArray(R.array.favouriteGame);
+
 
         if (db.characterDao().howManyCharacters() > 0) {
             canContinue = true;
@@ -91,7 +99,12 @@ public class MainActivity extends AppCompatActivity {
     private void generateDatabase() {
         db.characterDao().deleteAllEntries();
         //Add all characters to the database
-        AllocatedCharacters allocatedCharacters = new AllocatedCharacters(arrayOfCharNames, arrayOfCountryNames, characters);
+        AllocatedCharacters allocatedCharacters = new AllocatedCharacters(
+                arrayOfCharNames,
+                arrayOfCountryNames,
+                arrayOfFavouriteFood,
+                arrayOfFavouriteGame,
+                characters);
         for (Character c : characters
         ) {
             db.characterDao().insertOne(c);
@@ -130,28 +143,4 @@ public class MainActivity extends AppCompatActivity {
         startActivity(continueGame);
         finish();
     }
-// TODO Delete
-//    private void fillDatabaseCharacter(){
-//
-//        Character chr1 = new Character(mPasscode(),R.drawable.ic_char_female_1, "Selena Gomez",80000,false,"Germany",1990,"Momo","Cricket");
-//        Character chr2 = new Character(mPasscode(),R.drawable.ic_char_female_2, "SS Gomez",80000,false,"Germany",1990,"Momo","Cricket");
-//        Character chr3 = new Character(mPasscode(),R.drawable.ic_char_male_1, "Nelsan Mandela",88000,false,"Netherlands",1978,"Sandwich","Badminton");
-//        Character chr4 = new Character(mPasscode(),R.drawable.ic_char_male_2, "Sandy Mandy",98000,false,"Denmark",1987,"Hotdog","Biking");
-//
-//        db.characterDao().insertAll(chr1,chr2,chr3,chr4);
-//    }
-//
-//    private String mPasscode(){
-//        String passcode;
-//        String p1,p2,p3,p4;
-//        p1 = String.valueOf(randomNumberTill10());
-//        p2 = String.valueOf(randomNumberTill10());
-//        p3 = String.valueOf(randomNumberTill10());
-//        p4 = String.valueOf(randomNumberTill10());
-//        passcode = p1+p2+p3+p4;
-//        return passcode;
-//    }
-//    private int randomNumberTill10(){
-//        return  new Random().nextInt(10);
-//    }
 }

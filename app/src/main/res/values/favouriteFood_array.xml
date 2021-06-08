@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="favouriteFood">
+        <item>Mozzarella and potato kebab</item>
+        <item>Scallop and fish pie</item>
+        <item>Chilli and onion burgers</item>
+        <item>Leek and spinach gyoza</item>
+        <item>Lemon and avocado pasta</item>
+        <item>Mushroom and mango crepes</item>
+        <item>Coriander and chicken korma</item>
+        <item>Coriander and chicken korma</item>
+        <item>Chickpea and mango madras</item>
+        <item>Masa harina and licorice salad</item>
+        <item>Chickpea and cheese toastie</item>
+        <item>Diavolo and cucumber salad</item>
+        <item>Cornmeal and pineapple salad</item>
+        <item>Gorgonzola and mushroom risotto</item>
+        <item>Lemon and milk chocolate cookies</item>
+        <item>Fish and tumeric vindaloo</item>
+        <item>Banana and amchoor vindaloo</item>
+        <item>Chocolate and cardamom buns</item>
+        <item>Sausage and pancetta pasta</item>
+        <item>Chilli and persimmon parcels</item>
+        <item>Spinach and cauliflower salad</item>
+        <item>Veal and rabbit salad</item>
+        <item>Squash and vanilla cake</item>
+        <item>Banana and orange bread</item>
+        <item>Shank and potato casserole</item>
+        <item>Shank and new potato stewed</item>
+        <item>Green cabbage and sea trout salad</item>
+        <item>A crunchy salad featuring green cabbage and sea trout</item>
+        <item>Kipper and vacherin salad</item>
+        <item>Kipper and vacherin served on a bed of lettuce</item>
+        <item>Shank and tempeh salad</item>
+        <item>Shank and tempeh served on a bed of lettuce</item>
+        <item>Haroset and hazelnut cake</item>
+        <item>Rich cake made with haroset and hazelnut</item>
+        <item>Plantain and sweetcorn curry</item>
+        <item>Mild curry made with fresh plantain and creamed sweetcorn</item>
+        <item>Peppercorn and horseradish parcels</item>
+        <item>Lettuce and yam salad</item>
+        <item>Swordfish and lemon salad</item>
+        <item>Chilli and tea bread</item>
+    </string-array>
+</resources>

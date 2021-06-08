@@ -29,14 +29,30 @@ public class AllocatedCharacters extends Application {
             R.drawable.ic_char_male_7
     };
 
-    public AllocatedCharacters(String[] arrayOfCharNames, String[] arrayOfCountryNames, List<Character> allocatedCharacters) {
-
+    public AllocatedCharacters(
+            String[] arrayOfCharNames,
+            String[] arrayOfCountryNames,
+            String[] arrayOfFavouriteFood,
+            String[] arrayOfFavouriteGame,
+            List<Character> allocatedCharacters)
+    {
 //        checkForDuplicateCharactersNames(arrayOfCharNames);
-        buildAllocatedCharacterList(arrayOfCharNames, arrayOfCountryNames, allocatedCharacters);
+        buildAllocatedCharacterList(
+                arrayOfCharNames,
+                arrayOfCountryNames,
+                arrayOfFavouriteFood,
+                arrayOfFavouriteGame,
+                allocatedCharacters);
     }
 
     //build allocated characters
-    private void buildAllocatedCharacterList(String[] arrayOfCharNames, String[] arrayOfCountryNames, List<Character> characters) {
+    private void buildAllocatedCharacterList(
+            String[] arrayOfCharNames,
+            String[] arrayOfCountryNames,
+            String[] arrayOfFavouriteFood,
+            String[] arrayOfFavouriteGame,
+            List<Character> characters) {
+
         //Here we will build all the allocated characters to play with, we will get random 8 characters from
         //allCharactersList and add to allocatedCharacters List
         int totalNumberOfCharacters = allCharactersList.size();
@@ -53,8 +69,9 @@ public class AllocatedCharacters extends Application {
                     mCharacterImages[mCharImageIndex()],
                     mCharName(arrayOfCharNames, i),
                     arrayOfCountryNames[new Random().nextInt(arrayOfCountryNames.length)],
-                    "Suji",
-                    "Game"));
+                    arrayOfFavouriteFood[new Random().nextInt(arrayOfFavouriteFood.length)],
+                    arrayOfFavouriteGame[new Random().nextInt(arrayOfFavouriteGame.length)]
+            ));
         }
     }
 

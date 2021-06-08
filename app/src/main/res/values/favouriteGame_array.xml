@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="favouriteGame">
+        <item>3x3 Basketball</item>
+        <item>Acrobatic Gymnastics</item>
+        <item>Alpine Skiing</item>
+        <item>Archery</item>
+        <item>Artistic Gymnastics</item>
+        <item>Artistic Swimming</item>
+        <item>Athletics</item>
+        <item>Badminton</item>
+        <item>Baseball Softball</item>
+        <item>Basketball</item>
+        <item>Beach Handball</item>
+        <item>Beach Volleyball</item>
+        <item>Biathlon</item>
+        <item>BMX Freestyle</item>
+        <item>BMX Racing</item>
+        <item>Bobsleigh</item>
+        <item>Boxing</item>
+        <item>Breaking</item>
+        <item>Canoe / Kayak Flatwater</item>
+        <item>Canoe / Kayak Slalom</item>
+        <item>Cross-Country</item>
+        <item>Curling</item>
+        <item>Diving</item>
+        <item>Equestrian</item>
+        <item>Fencing</item>
+        <item>Figure Skating</item>
+        <item>Football</item>
+        <item>Freestyle Skiing</item>
+        <item>Futsal</item>
+        <item>Golf</item>
+        <item>Handball</item>
+        <item>Hockey</item>
+        <item>Ice Hockey</item>
+        <item>Judo</item>
+        <item>Karate</item>
+        <item>Luge</item>
+        <item>Marathon Swimming</item>
+        <item>Modern Pentathlon</item>
+        <item>Mountain Bike</item>
+        <item>Nordic Combined</item>
+        <item>Rhythmic Gymnastics</item>
+        <item>Road Cycling</item>
+        <item>Roller Speed Skating</item>
+        <item>Rowing</item>
+        <item>Rugby</item>
+        <item>Sailing</item>
+        <item>Shooting</item>
+        <item>Short Track Speed Skating</item>
+        <item>Skateboarding</item>
+        <item>Skeleton</item>
+        <item>Ski Jumping</item>
+        <item>Ski Mountaineering</item>
+        <item>Snowboard</item>
+        <item>Speed Skating</item>
+        <item>Sport Climbing</item>
+        <item>Surfing</item>
+        <item>Swimming</item>
+        <item>Table Tennis</item>
+        <item>Taekwondo</item>
+        <item>Tennis</item>
+        <item>Track Cycling</item>
+        <item>Trampoline</item>
+        <item>Triathlon</item>
+        <item>Volleyball</item>
+        <item>Water Polo</item>
+        <item>Weightlifting</item>
+        <item>Wrestling</item>
+    </string-array>
+</resources>
