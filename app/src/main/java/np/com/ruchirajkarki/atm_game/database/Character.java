@@ -19,7 +19,7 @@ public class Character {
     @ColumnInfo
     private int bankBalance = mBankBalance();
     @ColumnInfo
-    private boolean hackedStatus;
+    private boolean hackedStatus = false;
     @ColumnInfo
     private String country;
     @ColumnInfo
@@ -43,11 +43,14 @@ public class Character {
         this.birthYear = birthYear;
     }
 
-    public Character(int charImg, String charName, boolean hackedStatus, String country, String favouriteFood, String favouriteGame) {
+    public void setHackedStatus(boolean hackedStatus) {
+        this.hackedStatus = hackedStatus;
+    }
+
+    public Character(int charImg, String charName, String country, String favouriteFood, String favouriteGame) {
             //        this.charID = charID;
         this.charImg = charImg;
         this.charName = charName;
-        this.hackedStatus = hackedStatus;
         this.country = country;
         this.favouriteFood = favouriteFood;
         this.favouriteGame = favouriteGame;
