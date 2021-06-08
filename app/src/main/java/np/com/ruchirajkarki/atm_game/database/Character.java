@@ -23,7 +23,7 @@ public class Character {
     @ColumnInfo
     private String country;
     @ColumnInfo
-    private int birthYear;
+    private int birthYear = mBirthYear();
     @ColumnInfo
     private String favouriteFood;
     @ColumnInfo
@@ -39,13 +39,16 @@ public class Character {
         this.passcode = passcode;
     }
 
-    public Character(int charImg, String charName, boolean hackedStatus, String country, int birthYear, String favouriteFood, String favouriteGame) {
+    public void setBirthYear(int birthYear) {
+        this.birthYear = birthYear;
+    }
+
+    public Character(int charImg, String charName, boolean hackedStatus, String country, String favouriteFood, String favouriteGame) {
             //        this.charID = charID;
         this.charImg = charImg;
         this.charName = charName;
         this.hackedStatus = hackedStatus;
         this.country = country;
-        this.birthYear = birthYear;
         this.favouriteFood = favouriteFood;
         this.favouriteGame = favouriteGame;
     }
@@ -60,7 +63,11 @@ public class Character {
         passcode = p1 + p2 + p3 + p4;
         return passcode;
     }
-
+private int mBirthYear(){
+        int birthYear;
+        birthYear = randomNumberTill(41) + 1970;
+        return birthYear;
+}
     private int mBankBalance(){
         int balance;
         balance = randomNumberTill(1000) * 90;
