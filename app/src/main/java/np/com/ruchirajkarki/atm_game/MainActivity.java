@@ -2,15 +2,20 @@ package np.com.ruchirajkarki.atm_game;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 import np.com.ruchirajkarki.atm_game.database.Character;
 import np.com.ruchirajkarki.atm_game.database.CharacterDatabase;
@@ -19,20 +24,27 @@ import np.com.ruchirajkarki.atm_game.database.AllocatedCharacters;
 public class MainActivity extends AppCompatActivity {
     CharacterDatabase db;
     List<Character> characters = new ArrayList<>();
-        Boolean canContinue = false;
-        Button btn_continue;
-        Button btn_exit;
+    Boolean canContinue = false;
+    Button btn_continue;
+    Button btn_exit;
+    String[] arrayOfCharNames;
+    Resources resources;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_layout);
+        resources = getResources();
         btn_continue = findViewById(R.id.hl_btn_continue);
         btn_exit = findViewById(R.id.hl_btn_exit);
         db = CharacterDatabase.getDbInstance(this.getApplicationContext());
 
-        if(db.characterDao().howManyCharacters() > 0)
-        {
+        //Array of the character names and shuffle them
+        arrayOfCharNames = resources.getStringArray(R.array.names);
+        Collections.shuffle(Arrays.asList(arrayOfCharNames));
+
+        if (db.characterDao().howManyCharacters() > 0) {
             canContinue = true;
             btn_continue.setVisibility(View.VISIBLE);
         }
@@ -63,13 +75,14 @@ public class MainActivity extends AppCompatActivity {
                 });
         AlertDialog alertDialog = exitDialog.create();
         alertDialog.show();
-
+        Toast.makeText(this, arrayOfCharNames[new Random().nextInt(arrayOfCharNames.length)], Toast.LENGTH_SHORT).show();
 
     }
-    private void generateDatabase(){
+
+    private void generateDatabase() {
         db.characterDao().deleteAllEntries();
         //Add all characters to the database
-        AllocatedCharacters allocatedCharacters = new AllocatedCharacters(characters);
+        AllocatedCharacters allocatedCharacters = new AllocatedCharacters(arrayOfCharNames, characters);
         for (Character c : characters
         ) {
             db.characterDao().insertOne(c);
@@ -83,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         exitApp();
     }
 
-    public void exitApp(){
+    public void exitApp() {
         AlertDialog.Builder exitDialog = new AlertDialog.Builder(this);
         exitDialog.setMessage("Are you sure you want to exit?")
                 .setCancelable(true)
@@ -103,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
-    public void continueGame(View view){
+    public void continueGame(View view) {
         Intent continueGame = new Intent(MainActivity.this, BottomNavigationMenuController.class);
         startActivity(continueGame);
         finish();
