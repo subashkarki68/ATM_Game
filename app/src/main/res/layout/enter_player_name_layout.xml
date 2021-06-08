@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".PlayerName_Controller">
+
+    <TextView
+        android:id="@+id/epnl_enter_name_tv"
+        android:layout_width="370dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="42dp"
+        android:fontFamily="@font/press_start_2p_regular"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/enter_your_name"
+        android:textColor="@color/Silver"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/epnl_enter_player_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:ems="10"
+        android:fontFamily="@font/press_start_2p_regular"
+        android:gravity="center_horizontal|center_vertical"
+        android:hint="@string/str_name"
+        android:inputType="textPersonName"
+        android:textColor="@color/Clouds"
+        android:textColorHint="@color/Wet_Asphalt"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/epnl_enter_name_tv"
+        app:layout_constraintStart_toStartOf="@+id/epnl_enter_name_tv"
+        app:layout_constraintTop_toBottomOf="@+id/epnl_enter_name_tv" />
+
+    <RadioGroup
+        android:id="@+id/epnl_player_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        app:layout_constraintEnd_toEndOf="@+id/epnl_enter_player_name"
+        app:layout_constraintStart_toStartOf="@+id/epnl_enter_player_name"
+        app:layout_constraintTop_toBottomOf="@+id/epnl_enter_player_name">
+
+        <RadioButton
+            android:id="@+id/radio_female"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/Clouds"
+            android:checked="true"
+            android:fontFamily="@font/press_start_2p_regular"
+            android:paddingStart="24dp"
+            android:paddingLeft="24dp"
+            android:text="@string/str_female"
+            android:textColor="@color/Clouds"
+            android:textSize="18sp"
+            tools:ignore="RtlHardcoded,RtlSymmetry" />
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/Clouds"
+            android:fontFamily="@font/press_start_2p_regular"
+            android:paddingStart="24dp"
+            android:paddingLeft="24dp"
+            android:text="@string/str_male"
+            android:textColor="@color/Clouds"
+            android:textSize="18sp"
+            tools:ignore="RtlHardcoded,RtlSymmetry" />
+    </RadioGroup>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="32dp"
+        android:onClick="back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_arrow"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:onClick="forward"
+        android:scaleX="-1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_arrow"
+        tools:ignore="ContentDescription" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

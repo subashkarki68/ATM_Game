@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/home_screen_background"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/logo_text"
+        android:layout_width="370dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="42dp"
+        android:fontFamily="@font/press_start_2p_regular"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/game_logo_text"
+        android:textColor="@color/Clouds"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_text">
+
+        <Button
+            android:id="@+id/hl_btn_continue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24sp"
+            android:background="#00FFFFFF"
+            android:fontFamily="@font/press_start_2p_regular"
+            android:onClick="continueGame"
+            android:text="@string/str_continue"
+            android:textColor="@color/Silver"
+            android:textSize="32sp"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/hl_btn_newGame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24sp"
+            android:background="#00FFFFFF"
+            android:fontFamily="@font/press_start_2p_regular"
+            android:onClick="newGame"
+            android:text="@string/str_new_game"
+            android:textColor="@color/Silver"
+            android:textSize="32sp" />
+
+        <Button
+            android:id="@+id/hl_btn_help"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24sp"
+            android:background="#00FFFFFF"
+            android:fontFamily="@font/press_start_2p_regular"
+            android:text="@string/str_help"
+            android:textColor="@color/Silver"
+            android:textSize="32sp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24sp"
+            android:background="#00FFFFFF"
+            android:fontFamily="@font/press_start_2p_regular"
+            android:text="@string/str_about"
+            android:textColor="@color/Silver"
+            android:textSize="32sp" />
+
+        <Button
+            android:id="@+id/hl_btn_exit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            android:fontFamily="@font/press_start_2p_regular"
+            android:onClick="exitApp"
+            android:text="@string/str_exit"
+            android:textColor="@color/Silver"
+            android:textSize="32sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/testTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_text" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

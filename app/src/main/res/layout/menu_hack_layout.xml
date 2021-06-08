@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Midnight_Blue"
+    app:layout_constraintCircleRadius="@dimen/activity_horizontal_margin">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="64dp"
+        android:fontFamily="@font/play_regular"
+        android:text="Person To HACK"
+        android:textAlignment="center"
+        android:textColor="@color/Clouds"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/person_to_hack_spinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:background="@android:color/darker_gray"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <EditText
+        android:id="@+id/mhl_enter_passcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:fontFamily="@font/play_regular"
+        android:gravity="center_horizontal"
+        android:hint="Enter Passcode"
+        android:inputType="numberPassword"
+        android:maxLength="4"
+        android:textColor="@color/Clouds"
+        android:textColorHint="@color/Concrete"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/person_to_hack_spinner" />
+
+    <Button
+        android:id="@+id/mhl_hack_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_type_one"
+        android:fontFamily="@font/press_start_2p_regular"
+        android:padding="24dp"
+        android:paddingStart="64dp"
+        android:paddingEnd="64dp"
+        android:text="@string/menu_hack"
+        android:textColor="@color/Clouds"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/mhl_hack_status"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mhl_enter_passcode" />
+
+    <TextView
+        android:id="@+id/mhl_hack_status"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/press_start_2p_regular"
+        android:text="TEST"
+        android:textAlignment="center"
+        android:textColor="@color/teal_700"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mhl_hack_btn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

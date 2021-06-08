@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_characters"
+        android:icon="@drawable/ic_menu_characters"
+        android:title="@string/menu_characters"/>
+
+    <item
+        android:id="@+id/menu_research"
+        android:icon="@drawable/ic_menu_research"
+        android:title="@string/menu_research"/>
+
+    <item
+        android:id="@+id/menu_tools"
+        android:icon="@drawable/ic_menu_tools"
+        android:title="@string/menu_tools"/>
+
+    <item
+        android:id="@+id/menu_hack"
+        android:icon="@drawable/ic_menu_hack"
+        android:title="@string/menu_hack"/>
+
+</menu>

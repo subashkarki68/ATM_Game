@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">ATM_Game</string>
+    <string name="game_logo_text">ATM Game</string>
+    <string name="str_continue">Continue</string>
+    <string name="str_new_game">New Game</string>
+    <string name="str_help">Help</string>
+    <string name="str_about">About</string>
+    <string name="str_exit">Exit</string>
+    <string name="enter_your_name">Enter Your Name</string>
+    <string name="str_male">Male</string>
+    <string name="str_female">Female</string>
+    <string name="str_name">Name</string>
+    <string name="str_intro_text">Hello, how are you doing? We have a new city as our target. Show us what you can do.</string>
+    <string name="title_activity_bottom_navigation_menu_controller">BottomNav</string>
+    <string name="menu_characters">Characters</string>
+    <string name="menu_research">Research</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_hack">Hack</string>
+    <string name="str_hacked">Hacked</string>
+</resources>
