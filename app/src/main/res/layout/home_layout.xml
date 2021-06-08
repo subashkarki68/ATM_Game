@@ -83,21 +83,9 @@
             android:layout_height="wrap_content"
             android:background="#00FFFFFF"
             android:fontFamily="@font/press_start_2p_regular"
-            android:onClick="exitApp"
             android:text="@string/str_exit"
             android:textColor="@color/Silver"
             android:textSize="32sp" />
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/testTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

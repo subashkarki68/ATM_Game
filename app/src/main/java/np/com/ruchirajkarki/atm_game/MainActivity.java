@@ -6,7 +6,6 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,11 +14,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 
+import np.com.ruchirajkarki.atm_game.database.AllocatedCharacters;
 import np.com.ruchirajkarki.atm_game.database.Character;
 import np.com.ruchirajkarki.atm_game.database.CharacterDatabase;
-import np.com.ruchirajkarki.atm_game.database.AllocatedCharacters;
 
 public class MainActivity extends AppCompatActivity {
     CharacterDatabase db;
@@ -28,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     Button btn_continue;
     Button btn_exit;
     String[] arrayOfCharNames;
+    String[] arrayOfCountryNames;
     Resources resources;
 
 
@@ -43,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         //Array of the character names and shuffle them
         arrayOfCharNames = resources.getStringArray(R.array.names);
         Collections.shuffle(Arrays.asList(arrayOfCharNames));
+        arrayOfCountryNames = resources.getStringArray(R.array.countries);
 
         if (db.characterDao().howManyCharacters() > 0) {
             canContinue = true;
@@ -55,16 +55,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void newGame(View view) {
+        if (canContinue) newGameDialog();
+        else {
+            okNewGame();
+        }
+    }
+
+    private void okNewGame() {
+        Intent newGame = new Intent(MainActivity.this, BottomNavigationMenuController.class);
+        startActivity(newGame);
+        generateDatabase();
+        finish();
+    }
+
+    private void newGameDialog() {
         AlertDialog.Builder exitDialog = new AlertDialog.Builder(this);
         exitDialog.setMessage("There is already a saved game, Want to start a new game anyway?")
                 .setCancelable(true)
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent newGame = new Intent(MainActivity.this, BottomNavigationMenuController.class);
-                        startActivity(newGame);
-                        generateDatabase();
-                        finish();
+                        okNewGame();
                     }
                 })
                 .setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -75,14 +86,12 @@ public class MainActivity extends AppCompatActivity {
                 });
         AlertDialog alertDialog = exitDialog.create();
         alertDialog.show();
-        Toast.makeText(this, arrayOfCharNames[new Random().nextInt(arrayOfCharNames.length)], Toast.LENGTH_SHORT).show();
-
     }
 
     private void generateDatabase() {
         db.characterDao().deleteAllEntries();
         //Add all characters to the database
-        AllocatedCharacters allocatedCharacters = new AllocatedCharacters(arrayOfCharNames, characters);
+        AllocatedCharacters allocatedCharacters = new AllocatedCharacters(arrayOfCharNames, arrayOfCountryNames, characters);
         for (Character c : characters
         ) {
             db.characterDao().insertOne(c);

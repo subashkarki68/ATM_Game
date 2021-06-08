@@ -7,17 +7,17 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 @Database(entities = {Character.class}, version = 1)
-public abstract class CharacterDatabase extends RoomDatabase{
-    public abstract CharacterDao characterDao();
-
+public abstract class CharacterDatabase extends RoomDatabase {
     private static CharacterDatabase INSTANCE;
 
-    public static CharacterDatabase getDbInstance(Context context){
-        if(INSTANCE == null){
-            INSTANCE = Room.databaseBuilder(context.getApplicationContext(),CharacterDatabase.class,"charDatabase")
+    public static CharacterDatabase getDbInstance(Context context) {
+        if (INSTANCE == null) {
+            INSTANCE = Room.databaseBuilder(context.getApplicationContext(), CharacterDatabase.class, "charDatabase")
                     .allowMainThreadQueries()
                     .build();
         }
         return INSTANCE;
     }
+
+    public abstract CharacterDao characterDao();
 }

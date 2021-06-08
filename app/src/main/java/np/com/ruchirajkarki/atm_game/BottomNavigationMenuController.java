@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -25,8 +24,9 @@ import np.com.ruchirajkarki.atm_game.menu.tools.Menu_Tools_Fragment;
 
 public class BottomNavigationMenuController extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     boolean viewCreated = false;
-//private BottomNavigationMenuLayoutBinding binding;
+    //private BottomNavigationMenuLayoutBinding binding;
     ConstraintLayout mConstraintLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +39,7 @@ public class BottomNavigationMenuController extends AppCompatActivity implements
         //getting bottom navigation view and attaching the listener
         BottomNavigationView navigation = findViewById(R.id.nav_view);
         navigation.setOnNavigationItemSelectedListener(this);
-        if(!viewCreated) {
+        if (!viewCreated) {
             loadFragment(new Menu_Characters_Fragment());
             viewCreated = true;
         }
@@ -70,7 +70,7 @@ public class BottomNavigationMenuController extends AppCompatActivity implements
                 break;
         }
         Log.d("SUBASH", "returning load fragment");
-            return loadFragment(fragment);
+        return loadFragment(fragment);
     }
 
     private boolean loadFragment(Fragment fragment) {
@@ -87,8 +87,8 @@ public class BottomNavigationMenuController extends AppCompatActivity implements
         Log.d("SUBASH", "Fragment is null");
         return false;
     }
-    
-    public void clickedMe(View view){
+
+    public void clickedMe(View view) {
     }
 
     @Override

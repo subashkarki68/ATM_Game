@@ -13,42 +13,26 @@ public class Character {
     public int charID;
 
     @ColumnInfo
-    private int charImg;
+    private final int charImg;
     @ColumnInfo
-    private String charName;
+    private final String charName;
     @ColumnInfo
     private int bankBalance = mBankBalance();
     @ColumnInfo
     private boolean hackedStatus = false;
     @ColumnInfo
-    private String country;
+    private final String country;
     @ColumnInfo
     private int birthYear = mBirthYear();
     @ColumnInfo
-    private String favouriteFood;
+    private final String favouriteFood;
     @ColumnInfo
-    private String favouriteGame;
+    private final String favouriteGame;
     @ColumnInfo
     private String passcode = mPasscode();
 
-    public void setBankBalance(int bankBalance) {
-        this.bankBalance = bankBalance;
-    }
-
-    public void setPasscode(String passcode) {
-        this.passcode = passcode;
-    }
-
-    public void setBirthYear(int birthYear) {
-        this.birthYear = birthYear;
-    }
-
-    public void setHackedStatus(boolean hackedStatus) {
-        this.hackedStatus = hackedStatus;
-    }
-
     public Character(int charImg, String charName, String country, String favouriteFood, String favouriteGame) {
-            //        this.charID = charID;
+        //        this.charID = charID;
         this.charImg = charImg;
         this.charName = charName;
         this.country = country;
@@ -66,16 +50,19 @@ public class Character {
         passcode = p1 + p2 + p3 + p4;
         return passcode;
     }
-private int mBirthYear(){
+
+    private int mBirthYear() {
         int birthYear;
         birthYear = randomNumberTill(41) + 1970;
         return birthYear;
-}
-    private int mBankBalance(){
+    }
+
+    private int mBankBalance() {
         int balance;
         balance = randomNumberTill(1000) * 90;
         return balance;
     }
+
     private int randomNumberTill(int num) {
         return new Random().nextInt(num);
     }
@@ -96,8 +83,16 @@ private int mBirthYear(){
         return bankBalance;
     }
 
+    public void setBankBalance(int bankBalance) {
+        this.bankBalance = bankBalance;
+    }
+
     public boolean isHackedStatus() {
         return hackedStatus;
+    }
+
+    public void setHackedStatus(boolean hackedStatus) {
+        this.hackedStatus = hackedStatus;
     }
 
     public String getCountry() {
@@ -106,6 +101,10 @@ private int mBirthYear(){
 
     public int getBirthYear() {
         return birthYear;
+    }
+
+    public void setBirthYear(int birthYear) {
+        this.birthYear = birthYear;
     }
 
     public String getFavouriteFood() {
@@ -118,6 +117,10 @@ private int mBirthYear(){
 
     public String getPasscode() {
         return passcode;
+    }
+
+    public void setPasscode(String passcode) {
+        this.passcode = passcode;
     }
 }
 

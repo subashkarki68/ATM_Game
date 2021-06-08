@@ -1,10 +1,8 @@
 package np.com.ruchirajkarki.atm_game;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
 public class Intro_Controller extends MainActivity {
 

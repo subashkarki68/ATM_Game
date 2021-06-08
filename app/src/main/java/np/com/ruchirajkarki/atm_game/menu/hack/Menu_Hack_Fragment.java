@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,6 +32,7 @@ public class Menu_Hack_Fragment extends Fragment implements AdapterView.OnItemSe
     TextView mhl_hack_status;
     EditText mhl_enter_passcode;
     Button mhl_hack_btn;
+    ImageView mhl_char_image;
     CharacterDatabase db;
     List<Character> mCharacterList = new ArrayList<>();
     List<String> allCharactersNames = new ArrayList<>();
@@ -50,6 +52,7 @@ public class Menu_Hack_Fragment extends Fragment implements AdapterView.OnItemSe
         super.onViewCreated(view, savedInstanceState);
         db = CharacterDatabase.getDbInstance(this.getContext());
         mSpinner = view.findViewById(R.id.person_to_hack_spinner);
+        mhl_char_image = view.findViewById(R.id.mhl_char_image);
         mhl_hack_status = view.findViewById(R.id.mhl_hack_status);
         mhl_hack_btn = view.findViewById(R.id.mhl_hack_btn);
         mhl_enter_passcode = view.findViewById(R.id.mhl_enter_passcode);
@@ -61,14 +64,12 @@ public class Menu_Hack_Fragment extends Fragment implements AdapterView.OnItemSe
         mSpinner.setAdapter(adapter);
 
         mhl_hack_btn.setOnClickListener(v -> {
-            Toast.makeText(getContext(), "BTN CLICKED", Toast.LENGTH_SHORT).show();
             String enteredPasscode = mhl_enter_passcode.getText().toString();
             if (enteredPasscode.equals(mPasscode)) {
                 //If the Password is correct
                 mhl_hack_status.setText("Success");
                 mhl_hack_status.setTextColor(getResources().getColor(R.color.teal_700));
                 db.characterDao().updateHackedStatus(true, thisID);
-                Toast.makeText(getContext(), String.valueOf(mHackStatus), Toast.LENGTH_SHORT).show();
             } else {
                 //If the Password is incorrect
                 mhl_hack_status.setText("Failed");
@@ -81,11 +82,11 @@ public class Menu_Hack_Fragment extends Fragment implements AdapterView.OnItemSe
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         findPasswordFor(parent.getItemAtPosition(position).toString());
-        findHackedStatusFor(parent.getItemAtPosition(position).toString());
+        findHackedStatusAlsoWriteImageFor(parent.getItemAtPosition(position).toString());
         mCharacterList = db.characterDao().getAll();
         hackedNotHackedWriter();
         //TODO delete this toast
-        Toast.makeText(getContext(), "Pin is : " + mPasscode + mCharacterList.size(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), "Pin is : " + mPasscode, Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -102,10 +103,13 @@ public class Menu_Hack_Fragment extends Fragment implements AdapterView.OnItemSe
         }
     }
 
-    private void findHackedStatusFor(String name) {
+    private void findHackedStatusAlsoWriteImageFor(String name) {
         for (Character c : mCharacterList
         ) {
             if (c.getCharName().equals(name)) {
+                //Write Image for char
+                mhl_char_image.setImageResource(c.getCharImg());
+
                 hackedStatusFromDatabase = c.isHackedStatus();
                 thisID = c.getCharID();
                 mHackStatus = hackedStatusFromDatabase;

@@ -26,7 +26,7 @@ public class PlayerName_Controller extends AppCompatActivity {
         epnl_enter_player_name = findViewById(R.id.epnl_enter_player_name);
         epnl_player_gender_radio = findViewById(R.id.epnl_player_gender);
         epnl_female_radio = findViewById(R.id.radio_female);
-        playerDetailSP = getSharedPreferences("PLAYER_DETAILS",MODE_PRIVATE);
+        playerDetailSP = getSharedPreferences("PLAYER_DETAILS", MODE_PRIVATE);
         playerDetailEditor = playerDetailSP.edit();
     }
 
@@ -39,32 +39,33 @@ public class PlayerName_Controller extends AppCompatActivity {
     public void forward(View view) {
         playerName = epnl_enter_player_name.getText().toString();
         String playerGender;
-        if(TextUtils.isEmpty(playerName)){
+        if (TextUtils.isEmpty(playerName)) {
             epnl_enter_player_name.setError("Please Enter your name");
-        }else {
+        } else {
 
             //Getting player name and gender
             int selectedRadioID;
             int femaleRadioID = epnl_female_radio.getId();
             boolean isFemale = false;
             selectedRadioID = epnl_player_gender_radio.getCheckedRadioButtonId();
-            if(selectedRadioID == femaleRadioID){
+            if (selectedRadioID == femaleRadioID) {
                 isFemale = true;
             }
             //Putting Player Details in SharedPreference
             Intent forward = new Intent(PlayerName_Controller.this, Intro_Controller.class);
-            playerDetailEditor.putString("PLAYER_NAME",playerName);
-            playerDetailEditor.putString("PLAYER_GENDER",getPlayerGender(isFemale));
+            playerDetailEditor.putString("PLAYER_NAME", playerName);
+            playerDetailEditor.putString("PLAYER_GENDER", getPlayerGender(isFemale));
             playerDetailEditor.commit();
 
             startActivity(forward);
             finish();
         }
     }
-    private String getPlayerGender(Boolean isFemale){
-        if(isFemale){
+
+    private String getPlayerGender(Boolean isFemale) {
+        if (isFemale) {
             return "Female";
-        }else{
+        } else {
             return "Male";
         }
 

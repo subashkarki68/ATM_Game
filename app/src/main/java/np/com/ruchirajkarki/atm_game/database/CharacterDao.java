@@ -1,6 +1,5 @@
 package np.com.ruchirajkarki.atm_game.database;
 
-import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -36,18 +35,18 @@ public interface CharacterDao {
     void delete(Character character);
 
     @Query("DELETE FROM characters")
-    public void deleteAllEntries();
+    void deleteAllEntries();
 
     @Query("SELECT count(*) FROM characters")
-    public Integer howManyCharacters();
+    Integer howManyCharacters();
 
     @Query("SELECT charName FROM characters")
-    public List<String> getAllNames();
+    List<String> getAllNames();
 
     @Query("UPDATE characters SET hackedStatus = :hackedStatus WHERE charID = :charID")
-    public void updateHackedStatus(Boolean hackedStatus, int charID);
+    void updateHackedStatus(Boolean hackedStatus, int charID);
 
     @Query("SELECT charID FROM characters")
-    public List<Integer> getAllIDs();
+    List<Integer> getAllIDs();
 
 }

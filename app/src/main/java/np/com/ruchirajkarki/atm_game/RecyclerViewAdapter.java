@@ -1,7 +1,6 @@
 package np.com.ruchirajkarki.atm_game;
 
 import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,8 +10,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatCallback;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,7 +23,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     List<Character> mCharacterList;
     Context context;
     ConstraintLayout constraintLayout;
-    private OnCharacterListener mOnCharacterListener;
+    private final OnCharacterListener mOnCharacterListener;
 
     public RecyclerViewAdapter(List<Character> characterList, Context context, OnCharacterListener onCharacterListener) {
         mCharacterList = characterList;
@@ -38,7 +35,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.character_holder, parent, false);
-        return new MyViewHolder(view,mOnCharacterListener);
+        return new MyViewHolder(view, mOnCharacterListener);
     }
 
     @Override
@@ -74,6 +71,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return mCharacterList.size();
     }
 
+    public interface OnCharacterListener {
+        void onCharacterClick(int position);
+    }
+
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         ImageView img_holder;
         TextView name_holder;
@@ -90,7 +91,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 @Override
                 public void onClick(View v) {
                     Log.d("ERRORCHECK", "onClick: ");
-                    Toast.makeText(context.getApplicationContext(), "clicked " + String.valueOf(itemView), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context.getApplicationContext(), "clicked " + itemView, Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -100,7 +101,4 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             onCharacterListener.onCharacterClick(getAdapterPosition());
         }
     }
-    public interface OnCharacterListener{
-        void onCharacterClick(int position);
-        }
-    }
+}

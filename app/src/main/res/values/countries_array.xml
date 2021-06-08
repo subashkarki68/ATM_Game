@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="countries">
+        <item>Bermuda</item>
+        <item>Norway</item>
+        <item>Tajikistan</item>
+        <item>The Gambia</item>
+        <item>Ghana</item>
+        <item>Chile</item>
+        <item>Nicaragua</item>
+        <item>Wales</item>
+        <item>Trinidad and Tobago</item>
+        <item>Kyrgyzstan</item>
+        <item>Martinique</item>
+        <item>Bulgaria</item>
+        <item>Serbia</item>
+        <item>India</item>
+        <item>Swaziland</item>
+        <item>Kenya</item>
+        <item>Israel</item>
+        <item>Nigeria</item>
+        <item>Jordan</item>
+        <item>France</item>
+        <item>Honduras</item>
+        <item>Saint Helena</item>
+        <item>Mongolia</item>
+        <item>Marshall Islands</item>
+        <item>Peru</item>
+        <item>Republic of Macedonia</item>
+        <item>Poland</item>
+        <item>South Africa</item>
+        <item>Vanuatu</item>
+        <item>Sri Lanka</item>
+        <item>Andorra</item>
+        <item>Spain</item>
+        <item>Malta</item>
+        <item>Mexico</item>
+        <item>Sudan</item>
+        <item>Syria</item>
+        <item>Afghanistan</item>
+        <item>Western Sahara</item>
+        <item>Namibia</item>
+        <item>Armenia</item>
+        <item>Madagascar</item>
+        <item>El Salvador</item>
+        <item>Guinea</item>
+        <item>Fiji</item>
+        <item>Costa Rica</item>
+        <item>Mozambique</item>
+        <item>Liberia</item>
+        <item>Antigua and Barbuda</item>
+        <item>Libya</item>
+        <item>Nepal</item>
+    </string-array>
+</resources>

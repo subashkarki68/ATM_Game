@@ -19,13 +19,13 @@
 
     <ImageView
         android:id="@+id/cdvl_image_holder"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp "
         android:layout_height="wrap_content"
-        android:background="@color/Clouds"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_char_male_1" />
+        app:srcCompat="@drawable/ic_char_female_5" />
 
     <TextView
         android:id="@+id/cdvl_char_id"
