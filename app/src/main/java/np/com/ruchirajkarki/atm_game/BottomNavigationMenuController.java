@@ -4,14 +4,19 @@ import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.GestureDetector;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentContainerView;
+import androidx.viewpager2.adapter.FragmentViewHolder;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -24,13 +29,16 @@ import np.com.ruchirajkarki.atm_game.menu.tools.Menu_Tools_Fragment;
 
 public class BottomNavigationMenuController extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     boolean viewCreated = false;
-    //private BottomNavigationMenuLayoutBinding binding;
-    ConstraintLayout mConstraintLayout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bottom_navigation_menu_layout);
+        
+
+
+        
 //     binding = BottomNavigationMenuLayoutBinding.inflate(getLayoutInflater());
 //     setContentView(binding.getRoot());
 
@@ -111,4 +119,7 @@ public class BottomNavigationMenuController extends AppCompatActivity implements
         AlertDialog alertDialog = exitDialog.create();
         alertDialog.show();
     }
+
+
+
 }

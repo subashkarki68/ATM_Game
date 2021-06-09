@@ -36,6 +36,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_layout);
+
+        //
+//            Intent intent = new Intent(this,Test_swipe.class);
+//            startActivity(intent);
+
+        //
         resources = getResources();
         btn_continue = findViewById(R.id.hl_btn_continue);
         btn_exit = findViewById(R.id.hl_btn_exit);

@@ -19,9 +19,10 @@
 
     <ImageView
         android:id="@+id/cdvl_image_holder"
-        android:layout_width="0dp "
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:background="@drawable/character_detail_bg"
+        android:paddingTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -31,10 +32,8 @@
         android:id="@+id/cdvl_char_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="@+id/cdvl_image_holder"
+        android:textColor="@color/Clouds"
         app:layout_constraintTop_toTopOf="@+id/cdvl_image_holder" />
 
     <TextView
@@ -52,11 +51,15 @@
         app:layout_constraintTop_toBottomOf="@+id/cdvl_image_holder" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:id="@+id/linearLayout_details"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
         android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cdvl_name_holder">
 
@@ -178,24 +181,26 @@
             <TextView
                 android:id="@+id/cdvl_favourite_food_value"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_marginBottom="24dp"
                 android:fontFamily="@font/play_regular"
                 android:text=":"
                 android:textAlignment="viewStart"
                 android:textColor="@color/Clouds"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                app:autoSizeTextType="uniform" />
 
             <TextView
                 android:id="@+id/cdvl_favourite_game_value"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="25dp"
                 android:layout_marginBottom="24dp"
                 android:fontFamily="@font/play_regular"
                 android:text=":"
                 android:textAlignment="viewStart"
                 android:textColor="@color/Clouds"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                app:autoSizeTextType="uniform" />
         </LinearLayout>
     </LinearLayout>
 

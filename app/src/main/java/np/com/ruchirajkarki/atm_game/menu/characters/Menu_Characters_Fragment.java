@@ -3,9 +3,12 @@ package np.com.ruchirajkarki.atm_game.menu.characters;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.GestureDetector;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -39,7 +42,7 @@ public class Menu_Characters_Fragment extends Fragment implements RecyclerViewAd
         view = inflater.inflate(R.layout.menu_character_layout, container, false);
         db = CharacterDatabase.getDbInstance(this.getContext());
         mCharacterList = db.characterDao().getAll();
-        characterHolderView = view.findViewById(R.id.recyclerView);
+        characterHolderView = view.findViewById(R.id.mcl_recycler_view);
         totalCharacters = db.characterDao().howManyCharacters();
         Toast.makeText(this.getContext(), "Total number of Characters: " + totalCharacters, Toast.LENGTH_SHORT).show();
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
@@ -47,6 +50,8 @@ public class Menu_Characters_Fragment extends Fragment implements RecyclerViewAd
         customAdapter = new RecyclerViewAdapter(mCharacterList, getContext(), this);
         characterHolderView.setAdapter(customAdapter);
         return view;
+
+
 
     }
 

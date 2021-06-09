@@ -67,6 +67,7 @@ public class AllocatedCharacters extends Application {
         for (int i = 0; i < mNumberOfCharatersToPlayWith; i++) {
             characters.add(new Character(
                     mCharacterImages[mCharImageIndex()],
+//                    R.drawable.ic_test_char,
                     mCharName(arrayOfCharNames, i),
                     arrayOfCountryNames[new Random().nextInt(arrayOfCountryNames.length)],
                     arrayOfFavouriteFood[new Random().nextInt(arrayOfFavouriteFood.length)],

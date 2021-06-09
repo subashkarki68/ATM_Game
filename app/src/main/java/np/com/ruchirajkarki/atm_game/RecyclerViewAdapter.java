@@ -42,28 +42,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.name_holder.setText(mCharacterList.get(position).getCharName());
         Glide.with(context).load(mCharacterList.get(position).getCharImg()).into(holder.img_holder);
-//        Toast.makeText(context.getApplicationContext(), String.valueOf(position), Toast.LENGTH_SHORT).show();
-//        constraintLayout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-////                Toast.makeText(context, "Clicked" + String.valueOf("FIFIIFI"), Toast.LENGTH_SHORT).show();
-//                Intent intent = new Intent(context, CharacterDetail_View_Controller.class);
-//                intent.putExtra("id", mCharacterList.get(position).getCharID());
-//                context.startActivity(intent);
-//
-//            }
-//        });
-//        constraintLayout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                ////////////////////////////////////////////////////////////////////////
-//                Toast.makeText(context, String.valueOf(presidentList.get(position).getId()), Toast.LENGTH_SHORT).show();
-//                ////////////////////////////////////////////////////////////////////////
-//                Intent intent = new Intent(context,president_adding_layout.class);
-//                intent.putExtra("id",presidentList.get(position).getId());
-//                context.startActivity(intent);
-//            }
-//        });
     }
 
     @Override
@@ -91,7 +69,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 @Override
                 public void onClick(View v) {
                     Log.d("ERRORCHECK", "onClick: ");
-                    Toast.makeText(context.getApplicationContext(), "clicked " + itemView, Toast.LENGTH_SHORT).show();
                 }
             });
         }
