@@ -47,7 +47,7 @@ public class Test_swipe extends AppCompatActivity {
                                     //When x is greater than y
                                     //Check condition
                                     if(Math.abs(xDiff) > threshold
-                                        && Math.abs(velocityX) > velocity_threshold){
+                                            && Math.abs(velocityX) > velocity_threshold){
                                         //when x difference is greater than threshold
                                         //when x difference is greater than threshold
                                         //check condition
@@ -71,6 +71,7 @@ public class Test_swipe extends AppCompatActivity {
                                             //When swipe down
                                             mTextView.setText("Swiped Down");
                                         }else {
+                                            //When Swipe Up
                                             mTextView.setText("Swiped UP");
                                         }
                                         return true;
