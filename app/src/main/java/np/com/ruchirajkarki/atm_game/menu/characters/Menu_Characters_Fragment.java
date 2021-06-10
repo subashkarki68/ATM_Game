@@ -8,12 +8,12 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,11 +21,13 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
+import np.com.ruchirajkarki.atm_game.BottomNavigationMenuController;
 import np.com.ruchirajkarki.atm_game.CharacterDetail_View_Controller;
 import np.com.ruchirajkarki.atm_game.R;
 import np.com.ruchirajkarki.atm_game.RecyclerViewAdapter;
 import np.com.ruchirajkarki.atm_game.database.Character;
 import np.com.ruchirajkarki.atm_game.database.CharacterDatabase;
+import np.com.ruchirajkarki.atm_game.menu.hack.Menu_Hack_Fragment;
 
 public class Menu_Characters_Fragment extends Fragment implements RecyclerViewAdapter.OnCharacterListener {
     List<Character> mCharacterList;
@@ -49,17 +51,17 @@ public class Menu_Characters_Fragment extends Fragment implements RecyclerViewAd
         characterHolderView.setLayoutManager(layoutManager);
         customAdapter = new RecyclerViewAdapter(mCharacterList, getContext(), this);
         characterHolderView.setAdapter(customAdapter);
-        return view;
 
+        return view;
 
 
     }
 
     @Override
     public void onCharacterClick(int position) {
-                Intent intent = new Intent(getContext(), CharacterDetail_View_Controller.class);
-                intent.putExtra("id", mCharacterList.get(position).getCharID());
-                startActivity(intent);
+        Intent intent = new Intent(getContext(), CharacterDetail_View_Controller.class);
+        intent.putExtra("id", mCharacterList.get(position).getCharID());
+        startActivity(intent);
     }
 }
 
